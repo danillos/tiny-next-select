@@ -1,6 +1,6 @@
 <?php
 
-	if ($_GET['id'] == 1) {
+	if ($_GET['value'] == 1) {
 		?>
 			<option>City 1</option>
 			<option>City 2</option>
@@ -9,7 +9,7 @@
 	}
 	
 	
-	if ($_GET['id'] == 2) {
+	if ($_GET['value'] == 2) {
 		?>
 			<option>City 4</option>
 			<option>City 5</option>

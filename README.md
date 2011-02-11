@@ -1,9 +1,10 @@
 TinyNextSelect
 ===========
-![Screenshot](http://www.danillocesar.com.br/images/labs/tinynextselect.png)
-
 
 Simple and tiny plugin for load data for a next select. (Mootools)
+
+
+![Screenshot](http://www.danillocesar.com.br/images/labs/tinynextselect.png)
 
 
 How to use
@@ -26,8 +27,7 @@ Simple example:
 		
 	});
 
-	
-Creating your skins Styles:
+Html:
 	
 	<!-- HTML -->
 	<label for="">Country:</label>
@@ -43,6 +43,16 @@ Creating your skins Styles:
 	<select id="simple_states">
 			<option>Select country first</option>
 	</select>
+	
+Server Side PHP:
+	
+	<?php
+		// value from selected option
+		$value = $_GET['value'];
+		// echo <option>...</option>
+		//..
+	?>
+
 	
 See Demo and Documentation for more detail.
 

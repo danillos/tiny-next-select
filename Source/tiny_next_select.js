@@ -1,3 +1,19 @@
+/*
+---
+description: TinyNextSelect - Simple and tiny plugin for load data for a next select. 
+
+license: MIT-style
+
+authors:
+- Danillo César de O. Melo
+
+requires:
+- core/1.2.4+
+
+provides: TinyNextSelect
+
+...
+*/
 (function($) {
 	this.TinyNextSelect = new Class({
 		Implements: [Options,Events],
@@ -61,7 +77,7 @@
 					el_tns.resetNext();
 					return;
 				}
-				el_tns.request.get({'id':el_tns.options.select.get('value')});
+				el_tns.request.get({'value':el_tns.options.select.get('value')});
 			}
 		}
 	});
