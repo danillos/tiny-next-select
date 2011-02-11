@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>TinyNextSelect Examples</title>
+		<script src="mootools-core-1.3-full-nocompat-yc.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../Source/tiny_next_select.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script type="text/javascript" charset="utf-8">
+			window.addEvent('domready',function(){
+				
+				// Simple
+				$('simple_contries').tinyNextSelect({
+					next: $('simple_states'),
+					url: 'data_states.php'
+				})
+				
+				
+				// Three selects with text
+				$('countries').tinyNextSelect({
+					next: $('states'),
+					url: 'data_states.php',
+					option_text: 'Select your state'
+				});
+				
+				$('states').tinyNextSelect({
+					next: $('cities'),
+					url: 'data_cities.php',
+					option_text: 'Select your city'
+				});
+				
+				
+				// Three selects with auto laod
+				$('countries2').tinyNextSelect({
+					next: $('states2'),
+					url: 'data_states.php'
+				});
+				
+				$('states2').tinyNextSelect({
+					next: $('cities2'),
+					url: 'data_cities.php'
+				});
+				
+			});
+		</script>
+		
+	</head>
+	<body>
+		<h1>TinyNextSelect</h1>
+		<p>Simple and tiny plugin for load data for a next select. (mootools)</p>
+		<br>
+		
+		
+		
+		<h2>Simple</h2>
+		<label for="">Country:</label>
+		<select id="simple_contries">
+			<option value=''>Select your country</option>
+			<option value='1'>Country 1</option>
+			<option value='2'>Country 2</option>
+		</select>
+		
+		<br>
+		
+		<label for="">State:</label>
+		<select id="simple_states">
+				<option>Select country first</option>
+		</select>
+		
+		
+		
+		
+		<h2>Three selects with text</h2>
+		<label for="">Country:</label>
+		<select id="countries">
+			<option value=''>Select your country</option>
+			<option value='1'>Country 1</option>
+			<option value='2'>Country 2</option>
+		</select>
+		
+		<br>
+		
+		<label for="">State:</label>
+		<select id="states">
+				<option>Select country first</option>
+		</select>
+		
+		<br>
+		
+		<label for="">City:</label>
+		<select id="cities">
+			<option>Select state first</option>
+		</select>
+		
+		
+		
+		
+		<h2>Auto load example</h2>
+		<label for="">Country:</label>
+		<select id="countries2">
+			<option value=''>Select your country</option>
+			<option value='1' selected >Country 1</option>
+			<option value='2'>Country 2</option>
+		</select>
+		
+		<br>
+		
+		<label for="">State:</label>
+		<select id="states2">
+				<option>Select country first</option>
+		</select>
+		
+		<br>
+		
+		<label for="">City:</label>
+		<select id="cities2">
+			<option>Select state first</option>
+		</select>
+		
+		<p>Created by <a href="http://twitter.com/danillos">@danillos</a></p>
+	</body>
+</html>
