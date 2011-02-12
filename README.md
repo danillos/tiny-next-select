@@ -56,4 +56,4 @@ Server Side PHP:
 	
 See Demo and Documentation for more detail.
 
-[DEMO](http://www.danillocesar.com.br/labs/tiny-next-select "TinyNextSelect DEMO") | [DOCUMENTATION](http://github.com/danillos/tinyalert/blob/master/Docs/TinyNextSelect.md "View Documentation") | [DOWNLOAD](http://github.com/danillos/tinynextselect/downloads)
+[DEMO](http://www.danillocesar.com.br/labs/tiny-next-select "TinyNextSelect DEMO") | [DOCUMENTATION](http://github.com/danillos/tiny-next-select/blob/master/Docs/TinyNextSelect.md "View Documentation") | [DOWNLOAD](http://github.com/danillos/tiny-next-select/downloads)
