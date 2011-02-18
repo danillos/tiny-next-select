@@ -28,6 +28,7 @@ provides: TinyNextSelect
 
 		initialize: function(options) {
 			this.setOptions(options);
+			this.cache = {};
 			this.next_default_options = this.options.next.getFirst().clone();
 			this.request = new Request.HTML({
 				url: options.url,
@@ -38,10 +39,7 @@ provides: TinyNextSelect
 					if(this.options.option_text != undefined) {
 						html = '<option value="">'+this.options.option_text+'</option>'+html;
 					}
-					this.options.next.set('html',html);
-					this.options.next.getFirst('option').selected = true;
-					this.requestOptions(this.options.next);
-					this.fireEvent('complete');
+					this.loadNext(html);
 				}.bind(this),
 				onFailure: function(error) {
 					this.next.set('html','<option>'+error.status+':'+error.statusText+'</option>');
@@ -66,6 +64,14 @@ provides: TinyNextSelect
 			this.options.next.set('html','');
 			this.next_default_options.inject(this.options.next,'top');
 		},
+		
+		loadNext: function(html) {
+			this.options.next.set('html',html);
+			this.cache['value:'+this.options.select.get('value')] = html;
+			this.options.next.getFirst('option').selected = true;
+			this.requestOptions(this.options.next);
+			this.fireEvent('complete');
+		},
 
 		requestOptions: function(el) {
 			var el_tns = el.retrieve('tns');
@@ -75,9 +81,13 @@ provides: TinyNextSelect
 					var next_tns = this.options.next.retrieve('tns');
 					if(next_tns) next_tns.resetNext();
 					el_tns.resetNext();
-					return;
+				} else {
+					if (el_tns.cache['value:'+el_val]) {
+						el_tns.loadNext(el_tns.cache['value:'+el_val]);
+					} else {
+						el_tns.request.get({'value':el_val});
+					}
 				}
-				el_tns.request.get({'value':el_tns.options.select.get('value')});
 			}
 		}
 	});
